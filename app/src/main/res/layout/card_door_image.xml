@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="279dp"
+    android:layout_marginTop="11dp"
+    android:layout_marginLeft="21dp"
+    android:layout_marginRight="21dp"
+    android:elevation="3dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="12dp"
+    android:clickable="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:id="@+id/snapshot"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="207dp"
+            android:id="@+id/blur"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="#7C000000"
+            />
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:id="@+id/playButton"
+            android:src="@drawable/play_button"
+            app:layout_constraintTop_toTopOf="@id/snapshot"
+            app:layout_constraintBottom_toBottomOf="@id/snapshot"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:contentDescription="TODO" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/snapshot"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:text="Домофон"
+                android:textSize="18sp"
+                android:fontFamily="@font/circe_reg"
+                android:textColor="@color/textColor"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/online"
+                android:text="В сети"
+                android:textSize="15sp"
+                android:fontFamily="@font/circe_reg"
+                android:textColor="@color/textColorOptional"/>
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="6dp"
+            android:id="@+id/lockon_button"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/snapshot"
+            android:layout_marginRight="26dp"
+            android:src="@drawable/lockon"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
