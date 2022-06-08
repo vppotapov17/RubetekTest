@@ -69,13 +69,11 @@ public class CamerasFragment extends Fragment {
             else recyclerView.getAdapter().notifyDataSetChanged();
         });
 
+        // принудительное обновление данных с сервера
         SwipeRefreshLayout swipeRefreshLayout = getActivity().findViewById(R.id.swipeRefreshLayout);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                viewModel.getDataFromServer();
-                swipeRefreshLayout.setRefreshing(false);
-            }
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            viewModel.getDataFromServer();
+            swipeRefreshLayout.setRefreshing(false);
         });
     }
 }

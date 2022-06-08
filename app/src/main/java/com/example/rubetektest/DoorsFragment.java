@@ -65,6 +65,7 @@ public class DoorsFragment extends Fragment {
             else recyclerView.getAdapter().notifyDataSetChanged();
         });
 
+        // принудительное обновление данных с сервера
         SwipeRefreshLayout swipeRefreshLayout = getActivity().findViewById(R.id.swipeRefreshLayout);
         swipeRefreshLayout.setOnRefreshListener(() -> {
             viewModel.getDataFromServer();

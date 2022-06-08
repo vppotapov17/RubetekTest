@@ -90,7 +90,7 @@ public class CamerasViewModel extends AndroidViewModel{
 
             @Override
             public void onFailure(Call<CamerasPOJO> call, Throwable t) {
-
+                Log.d("AAA", t.getMessage());
             }
         });
     }
@@ -98,7 +98,4 @@ public class CamerasViewModel extends AndroidViewModel{
     public MutableLiveData<List<camera>> getCamerasLiveData() {
         return camerasLiveData;
     }
-
-
-
 }
