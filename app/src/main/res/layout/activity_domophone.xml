@@ -1,6 +1,198 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#f6f6f6"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:background="@color/white"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:textSize="21sp"
+            android:text="Домофон"
+            android:textColor="@color/colorPrimary"
+            android:layout_gravity="center"
+            android:layout_marginTop="60dp"/>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="105dp"
+        android:layout_marginBottom="75dp"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="216dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/snapshot"
+            android:background="@color/colorAccent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/views"
+            android:text="2"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            app:layout_constraintTop_toTopOf="@id/snapshot"
+            android:layout_marginTop="13dp"
+            app:layout_constraintRight_toRightOf="@id/snapshot"
+            android:layout_marginRight="16dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/eye"
+            app:layout_constraintTop_toTopOf="@id/views"
+            app:layout_constraintBottom_toBottomOf="@id/views"
+            app:layout_constraintRight_toLeftOf="@id/views"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="2dp"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/maximize"
+            android:id="@+id/maximize"
+            app:layout_constraintBottom_toBottomOf="@id/snapshot"
+            app:layout_constraintRight_toRightOf="@id/snapshot"
+            android:layout_marginRight="12dp"
+            android:layout_marginBottom="12dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/live"
+            app:layout_constraintLeft_toLeftOf="@id/snapshot"
+            app:layout_constraintBottom_toBottomOf="@id/snapshot"
+            android:layout_marginLeft="16dp"
+            android:layout_marginBottom="13dp"
+            android:src="@drawable/live"/>
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:lineHeight="8dp"
+            android:text="Прямая трансляция"
+            app:layout_constraintTop_toTopOf="@id/live"
+            app:layout_constraintBottom_toBottomOf="@id/live"
+            app:layout_constraintLeft_toRightOf="@id/live"
+            android:layout_marginLeft="11dp"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:id="@+id/doorOpenCard"
+            android:clickable="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="23dp"
+            app:cardCornerRadius="12dp"
+            android:elevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:layout_gravity="center|bottom"
+                android:orientation="vertical"
+                >
+
+                <ImageView
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:src="@drawable/key"
+                    android:layout_gravity="center"
+                    android:id="@+id/doorOpenImage"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Открыть дверь"
+                    android:textSize="14sp"
+                    android:layout_marginTop="12dp"
+                    android:textColor="@color/textColorOptional"/>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!-->Bottom-sheet<!-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        style="?attr/bottomSheetStyle"
+        app:behavior_peekHeight="75dp"
+        android:background="@color/white"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="13dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="8dp"
+            android:src="@drawable/back"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Настройки"
+            android:id="@+id/settings"
+            android:textSize="17sp"
+            android:textColor="#BBBBBB"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="22dp"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/swipe_top"
+            app:layout_constraintBottom_toTopOf="@id/settings"
+            app:layout_constraintLeft_toLeftOf="@id/settings"
+            app:layout_constraintRight_toRightOf="@id/settings"
+            android:layout_marginBottom="2dp"/>
+
+        <ImageButton
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/hide"
+            style="@style/Widget.Material3.Button"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="13dp"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

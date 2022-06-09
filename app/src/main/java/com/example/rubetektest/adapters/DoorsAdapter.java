@@ -1,5 +1,6 @@
 package com.example.rubetektest.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,9 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.rubetektest.DomophoneActivity;
 import com.example.rubetektest.R;
 import com.example.rubetektest.models.door;
 
+import java.io.Serializable;
 import java.util.List;
 
 public class DoorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
@@ -63,6 +66,12 @@ public class DoorsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                     .with(holder.itemView)
                     .load(current_door.getSnapshot())
                     .into(snapshot);
+
+            holder.itemView.setOnClickListener(view ->{
+                Intent intent = new Intent(holder.itemView.getContext(), DomophoneActivity.class);
+                intent.putExtra("current_door", (Serializable) current_door);
+                holder.itemView.getContext().startActivity(intent);
+            });
         }
     }
 
