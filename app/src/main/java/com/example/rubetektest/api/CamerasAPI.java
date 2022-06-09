@@ -1,6 +1,6 @@
-package com.example.rubetektest.repositories.retrofit;
+package com.example.rubetektest.api;
 
-import com.example.rubetektest.repositories.retrofit.POJOs.CamerasPOJO;
+import com.example.rubetektest.api.POJOs.CamerasPOJO;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

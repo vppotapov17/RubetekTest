@@ -1,7 +1,6 @@
-package com.example.rubetektest;
+package com.example.rubetektest.screens.Doors;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,13 +11,11 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.RoomDatabase;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.rubetektest.R;
 import com.example.rubetektest.adapters.DoorsAdapter;
 import com.example.rubetektest.models.door;
-import com.example.rubetektest.repositories.room.DBs.doorsDB;
-import com.example.rubetektest.viewmodels.DoorsViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

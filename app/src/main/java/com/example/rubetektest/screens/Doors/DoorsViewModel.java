@@ -1,4 +1,4 @@
-package com.example.rubetektest.viewmodels;
+package com.example.rubetektest.screens.Doors;
 
 import android.app.Application;
 import android.util.Log;
@@ -8,11 +8,10 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.room.Room;
 
-import com.example.rubetektest.models.camera;
 import com.example.rubetektest.models.door;
-import com.example.rubetektest.repositories.retrofit.NetworkService;
-import com.example.rubetektest.repositories.retrofit.POJOs.DoorsPOJO;
-import com.example.rubetektest.repositories.room.DBs.doorsDB;
+import com.example.rubetektest.api.NetworkService;
+import com.example.rubetektest.api.POJOs.DoorsPOJO;
+import com.example.rubetektest.database.DBs.doorsDB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,7 +95,7 @@ public class DoorsViewModel extends AndroidViewModel {
         });
     }
 
-    public MutableLiveData<List<door>> getDoorsLiveData(){
+    public LiveData<List<door>> getDoorsLiveData(){
         return doorsLiveData;
     }
 }

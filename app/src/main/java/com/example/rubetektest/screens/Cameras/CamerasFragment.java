@@ -1,7 +1,6 @@
-package com.example.rubetektest;
+package com.example.rubetektest.screens.Cameras;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,16 +8,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.rubetektest.R;
 import com.example.rubetektest.adapters.CamerasAdapter;
 import com.example.rubetektest.models.camera;
-import com.example.rubetektest.viewmodels.CamerasViewModel;
 
 import java.util.ArrayList;
 import java.util.List;

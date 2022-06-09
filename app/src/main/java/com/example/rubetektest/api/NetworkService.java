@@ -1,4 +1,4 @@
-package com.example.rubetektest.repositories.retrofit;
+package com.example.rubetektest.api;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

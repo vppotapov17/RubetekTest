@@ -1,16 +1,17 @@
-package com.example.rubetektest.viewmodels;
+package com.example.rubetektest.screens.Cameras;
 
 import android.app.Application;
 import android.util.Log;
 
 import androidx.lifecycle.AndroidViewModel;
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.room.Room;
 
 import com.example.rubetektest.models.camera;
-import com.example.rubetektest.repositories.retrofit.NetworkService;
-import com.example.rubetektest.repositories.retrofit.POJOs.CamerasPOJO;
-import com.example.rubetektest.repositories.room.DBs.camerasDB;
+import com.example.rubetektest.api.NetworkService;
+import com.example.rubetektest.api.POJOs.CamerasPOJO;
+import com.example.rubetektest.database.DBs.camerasDB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -95,7 +96,7 @@ public class CamerasViewModel extends AndroidViewModel{
         });
     }
 
-    public MutableLiveData<List<camera>> getCamerasLiveData() {
+    public LiveData<List<camera>> getCamerasLiveData() {
         return camerasLiveData;
     }
 }

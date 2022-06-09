@@ -1,4 +1,4 @@
-package com.example.rubetektest.repositories.room.DAOs;
+package com.example.rubetektest.database.DAOs;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

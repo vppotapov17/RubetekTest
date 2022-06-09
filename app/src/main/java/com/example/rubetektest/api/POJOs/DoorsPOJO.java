@@ -1,4 +1,4 @@
-package com.example.rubetektest.repositories.retrofit.POJOs;
+package com.example.rubetektest.api.POJOs;
 
 import com.example.rubetektest.models.door;
 import com.google.gson.annotations.SerializedName;
